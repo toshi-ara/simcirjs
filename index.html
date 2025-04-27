@@ -1,45 +1,31 @@
 <!doctype html>
-<html>
+<html lang="ja">
   <head>
+    <meta charset="UTF-8" />
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
     <script type="text/javascript" src="js/simcir.js"></script>
     <link rel="stylesheet" type="text/css" href="css/simcir.css" />
     <script type="text/javascript" src="js/simcir-basicset.js"></script>
     <link rel="stylesheet" type="text/css" href="css/simcir-basicset.css" />
     <script type="text/javascript" src="js/simcir-library.js"></script>
 
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/load.js"></script>
+
     <title>SimcirJS</title>
   </head>
+
   <body>
+    <h1>SimcirJS: 論理回路シミュレーター</h1>
+    <div class="simcir" id="simcir"></div>
 
-    <h1>SimcirJS: a circuit simulator</h1>
-    <div class="simcir">
-      {
-      "width": 800,
-      "height": 600,
-      "showToolbox": true,
-      "toolbox": [
-          {"type": "DC"},
-          {"type": "Joint"},
-          {"type": "Toggle"},
-          {"type": "LED", "color":"#ff0000", "label":"LED"},
-          {"type": "AND", "label": "AND"},
-          {"type": "OR", "label": "OR"},
-          {"type": "NOT","label": "NOT"},
-          {"type": "NAND","label": "NAND"},
-          {"type": "NOR","label": "NOR"},
-          {"type": "XOR","label": "XOR"},
-          {"type": "HalfAdder","label": "HalfAdder"},
-          {"type": "FullAdder","label": "FullAdder"},
-          {"type": "4bit7seg", "color":"#ff0000"}
-        ]
-      }
+    <div>
+      <button id="getDataBtn">JSONデータ取得</button>
+      <button id="setDataBtn">JSONデータから回路を復元</button>
     </div>
+    <textarea id="dataArea" style="width:800px; height:200px;"></textarea>
 
-    <h2>Display circuit data (JSON)</h2>
-    <p>
-    Ctrl+Click(Mac:command+Click) on your circuit and copy a circuit data.
-    </p>
 
     <hr/>
     <div style="text-align: right;">
@@ -49,5 +35,6 @@
       <br>
       Licensed under the MIT license
     </div>
+
   </body>
 </html>
