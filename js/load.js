@@ -1,21 +1,24 @@
 $(function() {
-    var $s = simcir;
-    var $simcir = $('#simcir');
+    const $s = simcir;
+    const $simcir = $('#simcir');
+    const $getDataBtn = $('#getDataBtn');
+    const $setDataBtn = $('#setDataBtn');
+    const $dataArea = $('#dataArea');
 
-    var getCircuitData = function() {
+    function getCircuitData() {
         return $s.controller(
-            $simcir.find('.simcir-workspace') ).text();
+            $simcir.find('.simcir-workspace')).text();
     };
-    var setCircuitData = function(data) {
-        $s.setupSimcir($simcir, JSON.parse(data) );
+    function setCircuitData(data) {
+        $s.setupSimcir($simcir, JSON.parse(data));
     };
 
     // button click events
-    $('#getDataBtn').click(function() {
-        $('#dataArea').val(getCircuitData() );
+    $getDataBtn.click(() => {
+        $dataArea.val(getCircuitData());
     });
-    $('#setDataBtn').click(function() {
-        setCircuitData($('#dataArea').val() );
+    $setDataBtn.click(() => {
+        setCircuitData($('#dataArea').val());
     });
 
     // load default (just specifies circuit size).
